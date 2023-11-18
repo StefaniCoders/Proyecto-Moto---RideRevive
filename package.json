@@ -1,0 +1,43 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "axios": "^0.21",
+        "bootstrap": "^4.6.0",
+        "deepmerge": "^4.2.2",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "postcss": "^8.1.14",
+        "sass": "^1.55.0",
+        "sass-loader": "^13.1.0",
+        "vue": "^2.6.12",
+        "vue-loader": "^15.9.7",
+        "vue-template-compiler": "^2.6.12",
+        "vuetify-loader": "^2.0.0-alpha.9",
+        "vuetifyjs-mix-extension": "0.0.20"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.2",
+        "@johmun/vue-tags-input": "^2.1.0",
+        "admin-lte": "^3.1.0",
+        "apexcharts": "^3.36.3",
+        "bootstrap-vue": "^2.21.2",
+        "sweetalert2": "^9.17.2",
+        "vform": "^1.0.1",
+        "vue-apexcharts": "^1.6.2",
+        "vue-form-wizard": "^0.8.4",
+        "vue-good-wizard": "^1.4.1",
+        "vue-progressbar": "^0.7.5",
+        "vue-router": "^3.4.9",
+        "vue-select": "^3.20.0",
+        "vuetify": "^2.6.12"
+    }
+}
