@@ -19,7 +19,8 @@ class UsuarioController extends Controller
        // return view('pages.usuario');
        // return $usuarios;
        $usuario = Usuario::get();
-       return view('pages.usuario', array('usuario'=>$usuario));
+       $empleado = Empleado::get();
+       return view('pages.usuario', array('usuario'=>$usuario,'empleado'=>$empleado));
     }
 
     public function records(Request $request){

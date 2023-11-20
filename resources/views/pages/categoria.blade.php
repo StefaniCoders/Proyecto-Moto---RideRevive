@@ -15,7 +15,7 @@
                 <button class="btn btn-primary ml-2" type="submit" ><i class="fas fa-search mr-1"></i>Buscar</button>
             </form>
 
-            <a href="{{ url('/categoria-create') }}" class="btn btn-primary ml-2">Nuevo categoria</a>
+            <a href="#modal-create-categoria" rel="modal:open" class="btn btn-primary ml-2">Nueva categoria</a>
 
         </div>
 
@@ -78,7 +78,23 @@
         </form>
 
  <br>
-                        </div>
+</div>
+
+
+<div id="modal-create-categoria" class="modal" >
+  <form  method="POST" action="{{ route('categoria-store') }}">
+    @csrf
+   <div class="form-row">
+       <div class="form-group col-md-12">
+          <label for="inputEmail4">Descripcion Categoria</label>
+          <input type="text" class="form-control" id="descripcion" required name="descripcion" placeholder="Nombres">
+       </div>
+   </div>
+   <button type="submit" class="btn btn-primary"> {{isset($categoria)?"Actualizar":"Registrar"}} Categoria</button>
+</form>
+  
+   <br>
+  </div>
 
 <style>
 .modal {

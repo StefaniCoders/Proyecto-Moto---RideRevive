@@ -18,7 +18,7 @@
             <!-- <input type="text" class="form-control"> -->
             <!-- <button class="btn btn-primary ml-2"><i class="fas fa-search mr-1"></i>Buscar</button> -->
 
-            <a href="{{ url('/usuario-create') }}" class="btn btn-primary ml-2">Nueva Usuario</a>
+            <a href="#modal-crear-usuario" rel="modal:open" class="btn btn-primary ml-2">Nueva Usuario</a>
         </div>
 
         <div class="col-md-12 p-20 m-2 border">
@@ -55,12 +55,42 @@
     </div>
 
 
-    <div id="ex1" class="modal" >
-    <h4>Editar Usuario</h4>
-                <form method="POST" action="{{ route('usuario-store') }}">
-                    {!! csrf_field() !!}
+    <div id="modal-crear-usuario" class="modal">
+        <h4>Crear Usuario</h4>
+        <form  method="POST" action="{{ route('usuario-store') }}" >
+					@csrf
+				 <div class="form-row">
+						 <div class="form-group col-md-6">
+								 <label for="marca">Nombre</label>
+								 <input type="text" class="form-control" id="usuario" required name="usuario" placeholder="Nombre Usuario"> 
+						 </div>
+						 <div class="form-group col-md-6">
+								 <label for="modelo">Nivel</label>
+								 <input type="text" class="form-control" id="nivel" required name="nivel"  placeholder="Nivel">
+						 </div>
+						 <div class="form-group col-md-6">
+								 <label for="modelo">Clave</label>
+								 <input type="text" class="form-control" id="password" required name="password" placeholder="Clave">
+						 </div> 
+					
+						 <div class="form-group col-md-6">
+								 <label for="marca">Empleado</label>
+								<select name="IdEmpleado" id="IdEmpleado"  class="form-control">
+									@foreach($empleado as $items)
+											<option value='{{  $items->IdEmpleado }}'>{{  $items->Nombres }} </option>
+									@endforeach
+								 </select>
+						 </div>
+				 </div>            
+				 <button type="submit" class="btn btn-primary">Registrar Usuario</button>
+		 </form>    
+    </div>
 
-                    <div class="form-row">
+    <div id="ex1" class="modal">
+        <h4>Editar Usuario</h4>
+        <form method="POST" action="{{ route('usuario-store') }}">
+            {!! csrf_field() !!}
+            <div class="form-row">
                 <div class="form-group col-md-6">
                 <input type="hidden" class="form-control" id="IdEmpleado" name="IdEmpleado" value="">
                     <input type="hidden" class="form-control" id="IdUsuario" name="IdUsuario" value="">
@@ -84,8 +114,8 @@
                 <button type="submit" class="btn btn-primary">Editar Usuario</button>
                 </div>
             </div>                
-                </form>
-            </div>
+        </form>
+    </div>
 
            
         </div>
